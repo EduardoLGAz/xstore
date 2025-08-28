@@ -1,6 +1,6 @@
 <mat-card class="card-wraper" appearance="outlined" areia-label="Example card with outlined appearance">
-    <img mat-card-image [src]='product.image' alt="Photo of a Shiba Inu">
-    <mat-card-content>
+    <img mat-card-image [src]='product.image' alt="Photo of a Shiba Inu" (click)='showDetail()'>
+    <mat-card-content (click)='showDetail()'>
         <h2><strong>{{ product.title }}</strong></h2>
         <p><strong>{{ product.price | currency}}</strong></p>
     </mat-card-content>
@@ -9,9 +9,11 @@
         <button matButton (click)="addToCart()">
             <mat-icon>add</mat-icon>
         </button>
-        <button matButton>
+        @if (isInCart()) {
+        <button matButton (click)="deleteFromList()">
             <mat-icon>delete</mat-icon>
         </button>
+        }
         <!-- <button matButton>
             <mat-icon>edit</mat-icon>
         </button> -->

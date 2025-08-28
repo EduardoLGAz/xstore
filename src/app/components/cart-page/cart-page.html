@@ -1,7 +1,21 @@
-<div class="marketplace-container bg-gray333">
+<div class="marketplace-container bg-gray333 bg-img-light">
+    @if (cartLength > 0) {
+    <div class="cart-control-wraper">
+        <button mat-raised-button color="primary" (click)="clearCart()"><mat-icon>delete</mat-icon>Limpar
+            Carrinho</button>
+    </div>
+    }
+    @if (cartLength == 0) {
+    <div class="empty-container">
+        <div class="wrapper">
+            <h1>CARRINHO VAZIO</h1>
+        </div>
+    </div>
+    }
     <div class="item-card-container">
-        @for (product of cartProducts(); track product.id){
-        <app-item-card [product]="product" (click)="showDetail(product)"></app-item-card>
+        @for (product of cartProducts; track product.id){
+        <app-item-card [product]="product" (clickDetail)="showDetail($event)" (clickAdd)="addToCart($event)"
+            (clickDelete)="deleteFromCart($event)"></app-item-card>
         }
     </div>
 </div>

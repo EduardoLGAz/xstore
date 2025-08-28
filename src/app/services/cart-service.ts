@@ -1,32 +1,33 @@
-import { Injectable, signal } from '@angular/core';
-import { Product } from '../commons/types/Product';
+import { Injectable, signal } from "@angular/core";
+import { Product } from "../commons/types/Product";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class CartService {
-  conteudoCarrinho = signal([] as Product[]);
+  cartProducts = signal([] as Product[]);
   cartLength = signal(0);
+  isInCart = signal(false);
 
   getCart() {
-    return this.conteudoCarrinho();
+    return this.cartProducts();
   }
   addToCart(product: Product) {
-    this.conteudoCarrinho.update((products) => [...products, product]);
-    this.cartLength.set(this.conteudoCarrinho().length);
-    console.log(this.conteudoCarrinho());
+    this.cartProducts.update((products) => [...products, product]);
+    this.cartLength.set(this.cartProducts().length);
+    console.log(this.cartProducts());
   }
   getCartLength() {
     return this.cartLength();
   }
   clearCart() {
-    this.conteudoCarrinho.set([]);
+    this.cartProducts.set([]);
     this.cartLength.set(0);
   }
   removeFromCart(productId: number) {
-    this.conteudoCarrinho.update((products) =>
+    this.cartProducts.update((products) =>
       products.filter((product) => product.id !== productId)
     );
-    this.cartLength.set(this.conteudoCarrinho().length);
+    this.cartLength.set(this.cartProducts().length);
   }
 }

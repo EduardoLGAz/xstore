@@ -1,7 +1,8 @@
 <div class="marketplace-container bg-gray333 bg-img-light">
     <div class="item-card-container">
         @for (product of products(); track product.id){
-        <app-item-card [product]="product" (click)="showDetail(product)"></app-item-card>
+        <app-item-card [product]="product" (clickDetail)="showDetail($event)"
+            (clickAdd)="addToCart($event)"></app-item-card>
         }
     </div>
 </div>
