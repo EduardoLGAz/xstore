@@ -1,0 +1,39 @@
+.app-header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+}
+
+.logo img {
+  height: 40px; /* Ajuste o tamanho conforme necessário */
+  font-size: 50px;
+  font-weight: 900;
+  color: #d3d3d3;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #1abc9c; /* Cor de destaque ao passar o mouse ou quando ativo */
+}
+.spacer {
+  flex: 1;
+}

@@ -1,0 +1,18 @@
+/* src/app/commons/pages/goodbye-page/goodbye-page.css */
+.goodbye-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px 30px;
+}

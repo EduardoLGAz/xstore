@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-gray333 {
+  background-color: #333;
+}
+.bg-img-light {
+  /* background: url("https://i.pinimg.com/originals/d7/b9/0c/d7b90cc80898e8823455a127945719af.jpg")
+    no-repeat; */
+  background: url("/assets/bg/08.png");
+  background-size: cover;
+  background-position: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

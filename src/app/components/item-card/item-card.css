@@ -1,0 +1,42 @@
+.card-wraper {
+  display: flex;
+  flex-direction: column;
+  height: 350px; /* ajuste conforme necessário */
+  width: 250px; /* ajuste conforme necessário */
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+}
+
+mat-card-image,
+img[mat-card-image] {
+  flex: 1 1 0;
+  width: 100%;
+  object-fit: contain; /* ou 'cover' se preferir cortar */
+  background: #f5f5f5;
+  max-height: 180px; /* limite opcional para a imagem */
+}
+
+mat-card-content {
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+mat-card-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+h2 {
+  white-space: nowrap; /* Impede que o texto quebre a linha */
+  overflow: hidden; /* Esconde o conteúdo que não cabe */
+  text-overflow: ellipsis; /* Adiciona os três pontos (...) */
+}

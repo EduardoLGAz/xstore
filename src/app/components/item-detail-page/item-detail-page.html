@@ -1,0 +1,27 @@
+<!-- <mat-card class="wrapper">
+    <mat-card-title>{{ product.title }}</mat-card-title>
+    <img mat-card-image src="{{ 'item.imageUrl' }}" alt="{{ product.title }}">
+    <mat-card-content>
+        <p>{{ product.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <p>Preço: {{ product.price | currency }}</p>
+        <button mat-raised-button>Ação</button>
+    </mat-card-actions>
+</mat-card> -->
+<div class="detail-wraper">
+    <div class="image-wraper">
+        <img [src]='product!.image' alt="{{ product!.title }}">
+    </div>
+    <div class="info-wraper">
+        <h2><strong>{{ product!.title }}</strong></h2>
+        <p><strong>{{ product!.price | currency}}</strong></p>
+        <p>{{ product!.description }}</p>
+        @if (isLoggedIn()) {
+        <button mat-raised-button color="primary" (click)="addToCart()">
+            <mat-icon>add</mat-icon>
+            Adicionar ao carrinho
+        </button>
+        }
+    </div>
+</div>

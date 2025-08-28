@@ -1,0 +1,32 @@
+<header class="app-header">
+    <nav class="main-nav">
+        <ul>
+            <li><a routerLink={{PATHS.home}} routerLinkActive="active">Home</a></li>
+            <!-- <li><a routerLink="/about" routerLinkActive="active">Sobre</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active">Contato</a></li> -->
+        </ul>
+    </nav>
+    <span class="spacer"></span>
+    <div class="logo">
+        <a routerLink={{PATHS.base}}>
+            <img src="assets/logo.png" alt="X Store">
+        </a>
+    </div>
+    <span class="spacer"></span>
+    <div>
+        <nav class="main-nav">
+            <ul>
+                @if (!isLoggedIn()) {
+                <li><a routerLink={{PATHS.login}}>Login</a></li>
+                <li><a routerLink={{PATHS.signin}}>Cadastrar</a></li>
+                }@else {
+                <li><a routerLink={{PATHS.logout}} (click)="logOut()">Sair</a></li>
+                @if(cartLength() > 0) {
+                <li class="cart"><a routerLink={{PATHS.cart}}>Carrinho({{cartLength()}})</a></li>
+                }
+                <li><a routerLink={{PATHS.profile}}>Perfil</a></li>
+                }
+            </ul>
+        </nav>
+    </div>
+</header>

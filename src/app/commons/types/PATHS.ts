@@ -1,0 +1,15 @@
+export enum PATHS {
+  base = '',
+  home = 'home',
+  signin = 'signin',
+  login = 'login',
+  logout = 'logout',
+  cart = 'cart',
+  product = 'product',
+  profile = 'profile',
+  admin = 'admin',
+  bad_page = '404-not-found',
+  http_401 = '401-access-denied',
+  jukes = 'jukes',
+  any_path = '**',
+}
