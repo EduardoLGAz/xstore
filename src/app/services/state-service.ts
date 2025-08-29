@@ -6,6 +6,7 @@ import { Product } from "../commons/types/Product";
 })
 export class StateService {
   // isLogedIn: boolean = false;
+  // isAdmin: boolean = false;
   // cart: Product[] = [] as Product[];
   isInCart: boolean = false;
   lastProductList: Product[] = [] as Product[];

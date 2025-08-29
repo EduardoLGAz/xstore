@@ -24,7 +24,9 @@
                 @if(cartLength() > 0) {
                 <li class="cart"><a routerLink={{PATHS.cart}}>Carrinho({{cartLength()}})</a></li>
                 }
-                <li><a routerLink={{PATHS.profile}}>Perfil</a></li>
+                @if (isAdmin()) {
+                <li><a routerLink={{PATHS.admin}}>Admin</a></li>
+                }
                 }
             </ul>
         </nav>

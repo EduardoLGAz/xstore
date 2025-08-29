@@ -3,6 +3,7 @@
     <div class="cart-control-wraper">
         <button mat-raised-button color="primary" (click)="clearCart()"><mat-icon>delete</mat-icon>Limpar
             Carrinho</button>
+        <p>Total: {{ cartTotal | currency }}</p>
     </div>
     }
     @if (cartLength == 0) {

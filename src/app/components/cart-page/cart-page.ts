@@ -18,6 +18,7 @@ import { Router } from "@angular/router";
 export class CartPage {
   cartProducts: Product[] = [] as Product[];
   cartLength = 0;
+  cartTotal = 0;
   // cartProducts;
   constructor(
     private cartService: CartService,
@@ -27,6 +28,7 @@ export class CartPage {
     this.cartService.isInCart.set(true);
     this.cartProducts = this.cartService.getCart();
     this.cartLength = this.cartService.getCartLength();
+    this.cartTotal = this.cartService.getCartTotal();
     // console.log(this.cartService.getCart);
   }
 
@@ -46,10 +48,12 @@ export class CartPage {
     this.cartService.removeFromCart(product.id);
     this.cartProducts = this.cartService.getCart();
     this.cartLength = this.cartService.getCartLength();
+    this.cartTotal = this.cartService.getCartTotal();
   }
   addToCart(product: Product) {
     this.cartService.addToCart(product);
     this.cartProducts = this.cartService.getCart();
     this.cartLength = this.cartService.getCartLength();
+    this.cartTotal = this.cartService.getCartTotal();
   }
 }

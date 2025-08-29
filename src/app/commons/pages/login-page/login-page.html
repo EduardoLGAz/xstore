@@ -1,13 +1,13 @@
 <body class="bg-gray333 bg-img-light">
     <div class="wrapper">
-        <form action="">
+        <form (ngSubmit)="subLogin()" class="login-form" #loginForm="ngForm">
             <h1>Login</h1>
             <div class="input-box">
-                <input type="text" placeholder="Usuário" required>
+                <input type="text" name="username" [(ngModel)]="credencials.username" placeholder="Usuário" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Senha" required>
+                <input type="password" name="password" [(ngModel)]="credencials.password" placeholder="Senha" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="remember-forgot">
